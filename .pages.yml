@@ -225,6 +225,8 @@ content:
     label: Pages
     type: collection
     path: src
+    view:
+      layout: tree
     exclude: [ _data, _includes, blog, images ]
     filename: "{primary}.md"
     fields:
