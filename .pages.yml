@@ -143,6 +143,7 @@ components:
         - name: subheading
           label: Subheading
           type: rich-text
+          format: html
 
   hero-with-image:
     label: Hero with Image
