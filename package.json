@@ -1,0 +1,19 @@
+{
+  "name": "steadyfooted",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "Chris Fretz's personal portfolio website and blog",
+  "homepage": "https://github.com/chris-fretz/steadyfooted#readme",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/chris-fretz/steadyfooted.git"
+  },
+  "license": "MIT",
+  "author": "Chris Fretz",
+  "devDependencies": {
+    "@11ty/eleventy": "^3.1.6"
+  }
+}

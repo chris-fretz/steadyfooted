@@ -1,0 +1,291 @@
+media: 
+  input: src/images
+  output: images
+
+components:
+  accordion:
+    label: Accordion
+    type: object
+    list: true
+    fields:
+      - name: intro
+        label: Accordion Intro
+        description: This is an optional intro section to introduce the entire accordion section. Use H2 for headings.
+        type: rich-text
+      - name: schema
+        label: Do you need FAQ schema?
+        description: Turn this on if this accordion section will be used for frequently asked questions. It will add FAQ schema that will make search engines more likely to display your question and answer in question-based searches.
+        type: boolean
+      - name: accordion_groups
+        label: Accordion Groups
+        type: object
+        description: You can create multiple accordion groups to break your accordions into sections (e.g. Products FAQ, Services FAQ, Locations FAQ, etc.)
+        list: true
+        fields: 
+        - name: intro
+          label: Group Intro
+          description: This is an optional intro section to introduce the this accordion group. Use H3 for headings.
+          type: rich-text
+        - name: items
+          label: Individual Accordions
+          description: Add a heading/question and content/answer for each accordion.
+          type: object
+          list: true
+          fields:
+            - name: question
+              label: Heading
+              type: string
+            - name: answer
+              Label: content
+              type: rich-text
+
+  alt-content:
+    label: Alternating Content
+    fields: 
+      - name: orientation
+        label: Starting Orientation
+        type: select
+        description: Use the dropdown to select whether you'd like your alternating content to start with the copy on the left and the image on the right, or vice-versa. This is just to choose the first section and all subsequent sections will alternate in orientation.
+        options:
+          values:
+            - value: copy-left
+              label: Copy on left, image on right
+            - value: copy-right
+              label: Image on left, copy on right
+      - name: sections
+        label: Alt Content sections
+        type: object
+        list: true
+        fields: 
+        - name: copy
+          label: Copy
+          description: Use an H2 for headings.
+          type: rich-text
+          required: true
+        - name: circular
+          label: Make The Image Circular?
+          type: boolean
+          default: false
+          description: Turn this on if you want your image to be circular instead of rectangular. You may need to edit your image before uploading to make sure the subject fits well in the middle of the circle.
+        - name: image
+          label: Image
+          type: image
+          required: true
+          description: Add an image here from the website media folder. Dimensions should be... TO DO... NAME DIMENSIONS here
+        - name: alt_text
+          label: Image Alt Text
+          type: string
+          description: Add alt text for screen readers to describe the hero image.
+
+  cards:
+    label: Cards
+    fields:
+      - name: intro
+        label: Cards Intro
+        description: Add the H2 heading here. Additional intro info can be added if needed.
+        required: true
+        type: rich-text
+      - name: cards
+        label: Cards
+        type: object
+        list: true
+        fields:
+        - name: image
+          label: Card Image
+          type: image
+          required: true
+          description: Add an image here from the website media folder. Dimensions should be... TO DO... NAME DIMENSIONS here
+        - name: alt_text
+          label: Image Alt Text
+          type: string
+          description: Add alt text for screen readers to describe the image.
+        - name: heading
+          label: Heading
+          type: string
+          required: true
+        - name: content
+          label: Card Content
+          type: rich-text
+        - name: url
+          label: CTA button link
+          type: string
+          description: Add the URL of the call-to-action button link.
+        - name: link_text
+          label: Link Text
+          type: string
+          description: Add the text you want displayed for the link.
+        - name: new_tab
+          label: Open in New Tab?
+          type: boolean
+          default: false
+          description: Turn on if you want the link to open in a new tab. This should mostly be done only for external links or links to files like PDFs.
+
+  contact-form:
+    label: Contact Form
+    description: This block will automatically insert the contact form. You can add an introduction to the form below.
+    fields:
+      - name: heading
+        label: Contact Form Heading
+        type: string
+        description: Add a heading for the form. If none is entered, "Contact Us" will be the heading.
+      - name: intro
+        label: Form Intro (optional)
+        type: rich-text
+        description: Add an optional introduction giving any info you'd like about the communication process.
+
+  hero-simple:
+      label: Simple Hero
+      fields:
+        - name: heading
+          label: Heading (H1)
+          type: text
+          required: true
+        - name: subheading
+          label: Subheading
+          type: rich-text
+
+  hero-with-image:
+    label: Hero with Image
+    fields:
+      - name: hero_image
+        label: Hero Image
+        type: image
+        required: true
+      - name: alt_text
+        label: Image Alt Text
+        type: string
+        description: Add alt text for screen readers to describe the hero image.
+      - name: heading
+        label: Heading (H1)
+        type: text
+        required: true
+      - name: subheading
+        label: Subheading
+        type: rich-text
+
+  menu:
+    label: Menu
+    fields:
+      - name: items
+        label: Menu Items
+        type: object
+        list: true
+        fields:
+        - name: url
+          label: URL Slug
+          type: string
+          required: true
+          description: Add the relative slug of the menu item (e.g. /about/ for the About page).
+        - name: link_text
+          label: Link Text
+          type: string
+          required: true
+          description: Add the text you want displayed for the link in the menu ("About" or "About Us" for the About page).
+        - name: new_tab
+          label: Open in New Tab?
+          type: boolean
+          default: false
+          description: Turn on if you want the link to open in a new tab. This should mostly be done only for external links or links to files like PDFs.
+
+  page-setup:
+    label: Page Setup
+    type: object
+    fields:
+      - name: seo_description
+        label: SEO Description
+        type: text
+        required: true
+        description: Add a description of the page's content that is 145 characters or less. This description can be displayed in search results on Google and other search engines. If you don't want Google to index this page, enter "no-index".
+        options:
+          maxlength: 145
+
+  text-editor:
+    label: Text Editor
+    fields:
+      - name: content
+        label: Content
+        type: rich-text
+
+content:
+  - name: posts
+    label: Blog Posts
+    type: collection
+    path: src/blog
+    filename: "{primary}.md"
+    fields:
+      - name: title
+        label: Title
+        type: string
+        required: true
+      - name: page_setup
+        label: Page Setup
+        component: page-setup
+        
+  - name: pages
+    label: Pages
+    type: collection
+    path: src
+    exclude: [ _data, _includes, blog, images ]
+    filename: "{primary}.md"
+    fields:
+      - name: title
+        label: Title
+        type: string
+        required: true
+      - name: page_setup
+        label: Page Setup
+        component: page-setup
+      # HERO SECTION - Required, choose one type
+      - name: hero
+        label: Hero Section
+        type: block
+        list: 
+          collapsible: true
+          min: 1
+          max: 1
+        blocks:
+          - name: hero-simple
+            label: Simple Hero
+            component: hero-simple
+          - name: hero-with-image
+            label: Hero with Image
+            component: hero-with-image
+      # CONTENT - Optional flexible blocks
+      - name: blocks
+        label: Blocks
+        type: block
+        list: true
+        blocks:
+          - name: accordion
+            label: Accordion
+            component: accordion
+          - name: alt-content
+            label: Alternating Content
+            component: alt-content
+          - name: cards
+            label: Cards
+            component: cards
+          - name: contact-form
+            label: Contact Form
+            component: contact-form
+          - name: text-editor
+            label: Text Editor
+            component: text-editor
+
+  - name: header_menu
+    label: Header Menu
+    type: file
+    path: src/_data/header_menu.json
+    fields:
+      - name: menu
+        label: Menu
+        component: menu
+
+  - name: footer_menu
+    label: Footer Menu
+    type: file
+    path: src/_data/footer_menu.json
+    fields:
+      - name: menu
+        label: Menu
+        component: menu
