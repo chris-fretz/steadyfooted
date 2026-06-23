@@ -228,6 +228,9 @@ content:
     path: src
     view:
       layout: tree
+      node:
+        filename: index.md
+        hideDirs: others
     exclude: [ _data, _includes, blog, images ]
     filename: "{primary}.md"
     fields:
