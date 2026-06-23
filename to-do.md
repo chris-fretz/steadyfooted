@@ -10,7 +10,7 @@
 ~~- Give Pages CMS access to repo ~~
 ~~- Install and configure Eleventy~~
 ~~- Configure Pages CMS~~
-- Set up SASS (normalize, functions, global classes, etc.)
+~~- Set up SASS (normalize, functions, global classes, etc.)~~
 - Build header
 - Build footer
 - Build main page layout

@@ -71,7 +71,7 @@ components:
           label: Image
           type: image
           required: true
-          description: Add an image here from the website media folder. Dimensions should be... TO DO... NAME DIMENSIONS here
+          description: Add an image here from the website media folder. Dimensions should be... TODO... NAME DIMENSIONS here
         - name: alt_text
           label: Image Alt Text
           type: string
@@ -94,7 +94,7 @@ components:
           label: Card Image
           type: image
           required: true
-          description: Add an image here from the website media folder. Dimensions should be... TO DO... NAME DIMENSIONS here
+          description: Add an image here from the website media folder. Dimensions should be... TODO... NAME DIMENSIONS here
         - name: alt_text
           label: Image Alt Text
           type: string
