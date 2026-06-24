@@ -3,13 +3,58 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title><!-- Document --></title>
-     <link rel="preconnect" href="https://fonts.googleapis.com">
+    <title>{{ title }}{% if title != "Steadyfooted"%} | Steadyfooted{%  endif %}</title>
+    {% if seo_description == "no-index" %}
+        <meta name="robots" content="noindex">
+    {% else %}
+        <meta name="description" content="{{ page_setup.seo_description }}">
+    {% endif %}
+    <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@300;400;500;600;700&family=Pacifico&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="/css/style.min.css">
 </head>
 <body>
-    
+    <script>
+        // Check for saved preference first, then system preference, then default to dark
+        const savedTheme = localStorage.getItem('theme');
+        const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+
+        // Apply light mode if:
+        // 1. User explicitly chose light, OR
+        // 2. No saved preference AND system prefers light
+        if (savedTheme === 'light' || (!savedTheme && !prefersDark)) {
+            document.body.classList.add('light');
+        }
+    </script>
+    <header>
+        <div class="wrap flex f-wrap">
+            <a href="/">Steadyfooted</a>
+            <div class="flex f-wrap">
+                <div class="icon-container">
+                    <button class="icon-btn flex just-center" id="menu-toggle" aria-label="Toggle menu">
+                        <span class="fa-solid fa-bars flex just-center"></span>
+                    </button>
+                </div>
+                <nav class="nav">
+                    <ul>
+                        {% comment %} Add loop logic for menu items here {% endcomment %}
+                    </ul>
+                </nav>
+            </div>
+            <div class="icon-container">
+                <button class="icon-btn flex just-center" id="dark-mode-toggle" aria-label="Toggle dark mode">
+                        <span class="fa-solid fa-sun flex just-center"></span>
+                    </button>
+            </div>
+        </div>
+    </header>
+    <main>
+
+    </main>
+    <footer>
+        <script src="https://kit.fontawesome.com/6718c3b0d7.js" crossorigin="anonymous"></script>
+        <script src="/js/main.js"></script>
+    </footer>
 </body>
 </html>

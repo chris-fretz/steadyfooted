@@ -27,3 +27,5 @@
     - Categories - Mon 7/6
     - Main Blog Page - Tue 7/7
     - RSS Feed - Wed 7/8
+
+Sort of. So with this setup, if I create an About page, in Pages CMS, I can now hit a plus button next to it to create a child entry, but when I do, it says, "Before adding children to this file, you must rename it from "src/about.md" to "src/about/undefined". Can we somehow set it up so that 
