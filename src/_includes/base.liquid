@@ -56,10 +56,10 @@
         </div>
     </header>
     <main>
-                {% # Hero Section %}
-        {% assign heroBlock = hero[0] %}
-        {%- capture hero_template -%}blocks/{{ heroBlock.type }}.liquid{%- endcapture -%}
-        {% include hero_template, block: heroBlock %}
+        {% # Hero Section %}
+        {% assign hero_block = hero[0] %}
+        {%- capture hero_template -%}blocks/{{ hero_block.type }}.liquid{%- endcapture -%}
+        {% include hero_template, block: hero_block %}
         
         {% # Loop through blocks; build fails if block.type is missing or file doesn't exist %}
         {% for block in blocks %}
