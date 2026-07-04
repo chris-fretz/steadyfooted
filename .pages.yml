@@ -240,6 +240,7 @@ content:
       - name: hero
         label: Hero Section
         type: block
+        blockKey: type
         list: 
           collapsible: true
           min: 1
@@ -255,6 +256,7 @@ content:
       - name: blocks
         label: Blocks
         type: block
+        blockKey: type
         list: true
         blocks:
           - name: accordion
