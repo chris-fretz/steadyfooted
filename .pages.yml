@@ -1,6 +1,7 @@
 media: 
   input: src/images
   output: images
+  exclude: .gitkeep
 
 components:
   accordion:

@@ -1,0 +1,10 @@
+<section class="hero simple-hero">
+    <div class="wrap">
+        <div class="centered">
+            <h1>{{ block.heading }}</h1>
+            {% if block.subheading %}
+                <div class="mx-800">{{ block.subheading | markdown }}</div>
+            {% endif %}
+        </div>
+    </div>
+</section>

@@ -8,6 +8,26 @@
 /*-----------
     # Colors
 -----------*/
+body {
+    --bg-color: #060913;
+    --secondary-bg: #252728;
+    --text-primary: #fff;
+
+    background-color: var(--bg-color);
+    color: var(--text-primary);
+}
+body.light {
+    --bg-color: #fdfbf8;
+    --secondary-bg: #dee4ee;
+    --text-primary: #060913;
+    
+    background-color: var(--bg-color);
+    color: var(--text-primary);
+}
+$white: #fff;
+$black: #000;
+$green: #009958;
+$dark-green: #17734c;
 
 /*-----------
     # Fonts

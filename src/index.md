@@ -6,7 +6,7 @@ page_setup:
     theology.
 hero:
   - type: hero-with-image
-    hero_image: images/1920x500-1.webp
+    hero_image: images/1920x500.webp
     alt_text: Hero placeholder image
     heading: Steadyfooted
     subheading: Taking it one step at a time
