@@ -1,0 +1,35 @@
+<section class="block contact-form">
+    <div class="wrap">
+        <div class="wrap pb-50">
+            {% if block.intro %}
+                {{ block.intro | markdown }}
+            {% endif %}
+        </div>
+        {% comment %} Revisit the classes/styles for this section {% endcomment %}
+        <form action="" method="POST" class="flex">
+            <div class="form-row">
+                <div class="form-item">
+                    <label for="first-name">First Name</label>
+                    <input class="rounded" type="text" id="first-name" name="first-name">
+                </div>
+                <div class="form-item">
+                    <label for="last-name">Last Name</label>
+                    <input class="rounded" type="text" id="last-name" name="last-name">
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-item">
+                    <label for="email">Email</label>
+                    <input class="rounded" type="email" id="email" name="email">
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-item">
+                    <label for="message">Message</label>
+                    <textarea class="rounded" id="message" name="message"></textarea>
+                </div>
+            </div>
+            <button class="btn" type="submit">Send Your Message</button>
+        </form>
+    </div>
+</section>

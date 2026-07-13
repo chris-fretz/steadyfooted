@@ -1,0 +1,23 @@
+<section class="block cards">
+    <div class="wrap">
+        <div class="intro">
+            {% if block.intro %}
+                {{ block.intro | markdown }}
+            {% endif %}
+        </div>
+        <div>
+            {% for card in block.cards %}
+            <article class="rounded">
+                <img src="{{ card.image }}" alt="{{ card.alt_text }}" width="420">
+                <div class="flex">
+                    <h3>{{ card.heading }}</h3>
+                    {{ card.content | markdown }}
+                    <div class="flex">
+                        <a href="{{ card.url }}" {% if card.new_tab %} target="_blank" rel="noopener noreferrer"{% endif %}>{{ card.link_text }}</a>
+                    </div>
+                </div>
+            </article>
+            {% endfor %}
+        </div>
+    </div>
+</section>

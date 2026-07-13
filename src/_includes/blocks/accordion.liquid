@@ -1,0 +1,38 @@
+<section class="block accordion-section">
+    <div class="wrap">
+        {% # Intro to all accordion groups %}
+        {% if block.intro %}
+            <div>
+                {{ block.intro | markdown }}
+            </div>
+        {% endif %}
+        
+        {% # Loop through each accordion group %}
+        {% for group in block.accordion_groups %}
+            <section>
+                {% if group.intro %}
+                    <div>
+                        {{ group.intro | markdown }}
+                    </div>
+                {% endif %}
+                
+                {% # Loop through each individual accordion %}
+                {% for item in group.items %}
+                    <div {% if block.schema %}itemscope itemprop="mainEntity" itemtype="https://schema.org/Question"{% endif %}>
+                        <button
+                                aria-expanded="false" 
+                                aria-controls="answer-{{ forloop.index }}">
+                            <h4 {% if block.schema %}itemprop="name"{% endif %}>{{ item.question }}</h4>
+                            <span class="icon" aria-hidden="true"></span>
+                        </button>
+                        <div id="answer-{{ forloop.index }}" {% if block.schema %}itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer"{% endif %}>
+                            <div {% if block.schema %}itemprop="text"{% endif %}>
+                                {{ item.answer | markdown }}
+                            </div>
+                        </div>
+                    </div>
+                {% endfor %}
+            </section>
+        {% endfor %}
+    </div>
+</section>
