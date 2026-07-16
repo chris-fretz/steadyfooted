@@ -1,1 +1,58 @@
 @use "config" as *;
+
+h1, h2, h3, h4, h5, h6 {
+	margin: 0 0 20px 0;
+	font-family: $heading-font;
+	letter-spacing: 0;
+	color: var(--text-primary);;
+	font-weight: 700;
+	line-height: 1.3;
+}
+
+h1 {
+	font-size:to-rem(45);
+}
+h2 {
+	font-size:to-rem(32);
+}
+h3 {
+	font-size:to-rem(28);
+}
+h4 {
+	font-size:to-rem(24);
+}
+h5 {
+	font-size:to-rem(20);
+}
+h6 {
+	font-size:to-rem(17);
+}
+p, label {
+	margin-top: 0;
+	font-size:to-rem(16);
+	line-height: 1.5;
+	font-family: $body-font;
+	color: var(--text-primary);
+}
+input, textarea {
+	font-size:to-rem(16);
+	line-height: 1.5;
+	font-family: $body-font;
+}
+a {
+    font-family: $body-font;
+    color: var(--text-primary);;
+	&:hover {
+		text-decoration: none;
+	}
+}
+ul, ol, li {
+	font-family: $body-font;
+	color: var(--text-primary);;
+}
+ul, ol {
+	margin-left: 0;
+	width: fit-content;
+	margin: 0 auto;
+	// TODO: Adjust list styles for mobile
+}

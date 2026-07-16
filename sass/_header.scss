@@ -1,1 +1,5 @@
 @use "config" as *;
+
+header {
+    border-bottom: 3px solid var(--text-primary);
+}
