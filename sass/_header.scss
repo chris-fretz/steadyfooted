@@ -1,5 +1,43 @@
 @use "config" as *;
 
 header {
-    border-bottom: 3px solid var(--text-primary);
+    .wrap {
+        @media (min-width: 365px) {
+            justify-content: space-between;
+        }
+    }
+    .header-right {
+        @media (min-width: 768px) {
+            gap: to-rem(35);
+        }
+        .nav {
+            z-index: 20;
+            background: var(--bg-color);
+            padding: 20px;
+            border: 2px solid var(--text-primary);
+            border-radius: 20px;
+            top: 40px;
+            right: 43px;
+            max-height: 0;
+            // overflow: hidden;
+            visibility: hidden;
+            &.open {
+                max-height: 2000px;
+                visibility: visible;
+                transition: max-height 0.75s ease-in-out, visibility 0.75s ease-in-out;
+            }
+            @media (min-width: 768px) {
+                visibility: visible;
+                max-height: none;
+                position: static;
+                flex-direction: row;
+                padding: 0;
+                border: none;
+                border-radius: 0;
+                ul {
+                    flex-direction: row;
+                }
+            }
+        }
+    }
 }

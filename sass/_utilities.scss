@@ -1,3 +1,5 @@
+@use "config" as *;
+
 .block {
     padding: clamp(to-rem(40), 5vw, to-rem(60)) 0;
 }
@@ -16,8 +18,14 @@
 .py-30 {
 	padding: 30px 0;
 }
-.mw-800 {
+.max-w-800 {
 	max-width: 800px;
+}
+.border-b-3 {
+	border-bottom: 3px solid;
+}
+.border-theme-color {
+	border-color: var(--text-primary);
 }
 .flex {
 	display: flex;
@@ -36,6 +44,9 @@
 }
 .gap-20 {
 	gap: to-rem(20);
+}
+.gap-25 {
+	gap: to-rem(25);
 }
 .centered {
 	margin-left: auto;
@@ -87,8 +98,11 @@
     height: 100%;
     object-fit: cover;
 }
-.rel {
+.relative {
 	position: relative;
+}
+.absolute {
+	position: absolute;
 }
 .intro {
 	margin: to-rem(20) auto to-rem(70);

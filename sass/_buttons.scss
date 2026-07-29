@@ -8,19 +8,12 @@ button {
     cursor: pointer;
 }
 
-.icon-btn,
-.icon-btn span,
-.icon-btn span::before {
-	width: to-rem(26);
-    height: to-rem(26);
-    padding: 0;
-    margin: 0;
-}
-
 .icon-btn {
     span {
         display: flex;
+        justify-content: center;
         font-size: to-rem(24);
+        line-height: to-rem(30);
         &::before {
             display: block;
         }

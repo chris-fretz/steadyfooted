@@ -6,11 +6,11 @@
   "homepage": "https://github.com/chris-fretz/steadyfooted#readme",
   "scripts": {
     "dev": "npm-run-all --parallel dev:sass dev:eleventy",
-    "dev:sass": "sass sass/style.scss public/css/style.min.css --style=compressed --watch",
+    "dev:sass": "sass sass/style.scss public/css/style.min.css --watch",
     "dev:eleventy": "eleventy --serve",
     "build": "npm-run-all build:sass build:eleventy",
     "build:sass": "sass sass/style.scss public/css/style.min.css --no-source-map --style=compressed",
-    "build:eleventy": "eleventy"
+    "build:eleventy": "NODE_ENV=production eleventy"
   },
   "repository": {
     "type": "git",

@@ -31,11 +31,16 @@ export default function(eleventyConfig) {
 		},
     });
 
-    // Include images folder in the output
-    eleventyConfig.addPassthroughCopy("images");
+    // This should be unnecessary because the Eleventy plugin intercepts images and serves them on-demand from the plugin
+    // eleventyConfig.addPassthroughCopy({ "images": "images" });
 
     // Include Javascript folder in the output
-    eleventyConfig.addPassthroughCopy("js");
+    eleventyConfig.addPassthroughCopy({ "js": "js" });
+
+    // Only copy sass folder in development
+    if (process.env.NODE_ENV !== "production") {
+        eleventyConfig.addPassthroughCopy({ "sass": "sass" });
+    }
 
     // Define directory structure
     return {
