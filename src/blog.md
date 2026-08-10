@@ -8,4 +8,5 @@ hero:
     hero_image: images/hero-fiery-sunset.webp
     alt_text: Typewriter here?
     heading: Blog
+    subheading: Here's a test subheading.
 ---
