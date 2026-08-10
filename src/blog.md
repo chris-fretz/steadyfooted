@@ -1,5 +1,6 @@
 ---
 title: Blog
+layout: blog
 page_setup:
   seo_description: Read the latest ramblings and rantings of Chris Fretz, the
     author who's too legit too quit.

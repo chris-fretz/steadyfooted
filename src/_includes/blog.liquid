@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ title }}{% if title != "Steadyfooted"%} | Steadyfooted{%  endif %}</title>
+    {% if seo_description == "no-index" %}
+        <meta name="robots" content="noindex">
+    {% else %}
+        <meta name="description" content="{{ page_setup.seo_description }}">
+    {% endif %}
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@300;400;500;600;700&family=Pacifico&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/css/style.min.css">
+</head>
+<body>
+    <script>
+        // Check for saved preference first, then system preference, then default to dark
+        const savedTheme = localStorage.getItem('theme');
+        const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+
+        // Apply light mode if:
+        // 1. User explicitly chose light, OR
+        // 2. No saved preference AND system prefers light
+        if (savedTheme === 'light' || (!savedTheme && !prefersDark)) {
+            document.body.classList.add('light');
+        }
+    </script>
+    <header class="py-30 border-b-3 border-theme-color">
+        <div class="wrap flex flex-wrap justify-center align-center gap-20">
+            <a class="logo-link" href="/">Steadyfooted</a>
+            
+            <div class="header-right flex flex-wrap align-center gap-25 relative">
+                <div class="icon-container">
+                    <button class="icon-btn" id="menu-toggle" aria-label="Toggle menu">
+                        <span class="fa-solid fa-bars"></span>
+                    </button>
+                </div>
+                <nav class="nav absolute">
+                    <ul>
+                        {% for item in header_menu.menu.items %}
+                            <li>
+                                <a href="{{ item.url }}" {% if item.new_tab %} target="_blank" rel="noopener noreferrer"{% endif %}>
+                                    {{ item.link_text }}
+                                </a>
+                            </li>
+                        {% endfor %}
+                    </ul>
+                </nav>
+                <div class="icon-container">
+                    <button class="icon-btn" id="dark-mode-toggle" aria-label="Toggle dark mode">
+                        <span class="fa-solid fa-sun"></span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+    <main>
+        {% # Hero Section %}
+        {% assign hero_block = hero[0] %}
+        {%- capture hero_template -%}blocks/{{ hero_block.type }}.liquid{%- endcapture -%}
+        {% include hero_template, block: hero_block %}
+        
+        {% # Loop through blog posts %}
+        <p>Show list of blog posts here!</p>
+        {% comment %} {% for post in blog_posts %}
+            <article>
+                <h2>{{ post.title }}</h2>
+                <p>{{ post.excerpt }}</p>
+                <a href="{{ post.url }}">Read more</a>
+            </article>
+        {% endfor %} {% endcomment %}
+    </main>
+    <footer>
+        <div class="wrap flex f-wrap">
+            <nav>
+                <ul>
+                {% for item in footer_menu.menu.items %}
+                    <li>
+                    <a href="{{ item.url }}"{% if item.new_tab %} target="_blank" rel="noopener noreferrer"{% endif %}>
+                        {{ item.link_text }}
+                    </a>
+                    </li>
+                {% endfor %}
+                </ul>
+            </nav>
+            <p>&copy; 2025 Steadyfooted. All rights reserved.</p>
+        </div>
+    </footer>
+    <script src="https://kit.fontawesome.com/6718c3b0d7.js" crossorigin="anonymous"></script>
+    <script src="/js/main.js"></script>
+</body>
+</html>
