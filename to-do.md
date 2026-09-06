@@ -9,8 +9,8 @@
 ~~- Install Astro~~
 ~~- Init Git repo~~
 ~~- Connect repot to Netlify~~
-- Give Pages CMS access to repo
-- Configure Pages CMS
+~~- Give Pages CMS access to repo~~
+~~- Configure Pages CMS~~
 - Set up SASS (normalize, functions, global classes, etc.)
 - Build header
 - Build footer
