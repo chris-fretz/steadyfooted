@@ -1,0 +1,22 @@
+---
+import type { $brand, $input } from "astro:schema";
+
+const { frontmatter } = Astro.props;
+const pageTitle = frontmatter.title !== 'Steadyfooted' ? `${frontmatter.title} | Steadyfooted` : frontmatter.title;
+const seoMeta = frontmatter.seo_description === 'no-index'
+  ? { name: 'robots', content: 'noindex' }
+  : { name: 'description', content: frontmatter.seo_description };
+---
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{pageTitle}</title>
+    <meta {...seoMeta} />
+</head>
+<body>
+    <slot />
+</body>
+</html>
