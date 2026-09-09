@@ -296,6 +296,10 @@ content:
       - name: page_setup
         label: Page Setup
         component: page-setup
+      - name: layout
+        label: Layout
+        type: string
+        default: "../layouts/BaseLayout.astro"
       # HERO SECTION - Required, choose one type
       - name: hero
         label: Hero Section
