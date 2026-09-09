@@ -1,7 +1,38 @@
+---
+import { menu } from '../data/header-menu.json';
+---
+
 <header>
-    <nav>
-        <a href="/">Home</a>
-        <a href="/about">About</a>
-        <a href="/contact">Contact</a>
-    </nav>
+    <div>
+        <a href="/">Steadyfooted</a>
+
+        <div>
+            <div>
+                <button class="icon-btn" id="menu-toggle" aria-label="Toggle menu">
+                    <span class="fa-solid fa-bars"></span>
+                </button>
+            </div>
+
+            <nav>
+                <ul>
+                    {menu.items.map((item) => (
+                        <li>
+                            <a
+                                href={item.url}
+                                target={item.new_tab ? '_blank' : undefined}
+                                rel={item.new_tab ? 'noopener noreferrer' : undefined}
+                            >
+                                {item.link_text}
+                            </a>
+                        </li>
+                    ))}
+                </ul>
+            </nav>
+            <div>
+                <button class="icon-btn" id="dark-mode-toggle" aria-label="Toggle dark mode">
+                    <span class="fa-solid fa-sun"></span>
+                </button>
+            </div>
+        </div>
+    </div>
 </header>

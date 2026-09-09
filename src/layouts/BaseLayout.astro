@@ -1,4 +1,5 @@
 ---
+import Header from '../components/Header.astro';
 import '../styles/style.scss';
 import { Font } from 'astro:assets'; 
 const { frontmatter } = Astro.props;
@@ -19,6 +20,7 @@ const seoMeta = frontmatter.seo_description === 'no-index'
     <Font cssVariable="--font-ibm-plex-mono" />
 </head>
 <body>
+    <Header />
     <slot />
 </body>
 </html>

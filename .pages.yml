@@ -345,7 +345,7 @@ content:
     # Comment to try to bust cache
     label: Header Menu
     type: file
-    path: src/menus/header-menu.md
+    path: src/data/header-menu.json
     fields:
       - name: menu
         label: Menu
@@ -354,7 +354,7 @@ content:
   - name: footer_menu
     label: Footer Menu
     type: file
-    path: src/menus/footer-menu.md
+    path: src/data/footer-menu.json
     fields:
       - name: menu
         label: Menu
