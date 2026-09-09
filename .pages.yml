@@ -300,6 +300,7 @@ content:
         label: Layout
         type: string
         default: "../layouts/BaseLayout.astro"
+        hidden: true
       # HERO SECTION - Required, choose one type
       - name: hero
         label: Hero Section
