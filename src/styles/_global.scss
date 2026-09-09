@@ -1,0 +1,39 @@
+@use "config" as *;
+
+* {
+	box-sizing: border-box;
+}
+body {
+	margin: 0;
+}
+img {
+	width: 100%;
+	height: auto;
+	display: block;
+	margin: 0;
+	padding: 0;
+}
+main {
+	min-height: 100vh;
+}
+header,
+footer {
+	a {
+		text-decoration: none;
+	}
+}
+.nav {
+	ul {
+		display: flex;
+		flex-direction: column;
+		gap: 35px;
+		list-style-type: none;
+		margin: 0;
+		padding: 0;
+		a {
+			font-weight: 700;
+			font-size: to-rem(20);
+		}
+	}
+}
+// TODO: Create focus state for all HTML elements

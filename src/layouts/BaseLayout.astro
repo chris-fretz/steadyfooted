@@ -1,6 +1,6 @@
 ---
-import type { $brand, $input } from "astro:schema";
-
+import '../styles/style.scss';
+import { Font } from 'astro:assets'; 
 const { frontmatter } = Astro.props;
 const pageTitle = frontmatter.title !== 'Steadyfooted' ? `${frontmatter.title} | Steadyfooted` : frontmatter.title;
 const seoMeta = frontmatter.seo_description === 'no-index'
@@ -15,6 +15,8 @@ const seoMeta = frontmatter.seo_description === 'no-index'
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{pageTitle}</title>
     <meta {...seoMeta} />
+    <Font cssVariable="--font-pacifico" />
+    <Font cssVariable="--font-ibm-plex-mono" />
 </head>
 <body>
     <slot />
