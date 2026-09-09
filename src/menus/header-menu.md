@@ -1,6 +1,16 @@
 ---
 menu:
-    - url: "/"
-      link_text: "Home"
+  items:
+    - url: /
+      link_text: Home
+      new_tab: false
+    - url: /about/
+      link_text: About
+      new_tab: false
+    - url: /portfolio/
+      link_text: Portfolio
+      new_tab: false
+    - url: /blog/
+      link_text: Blog
       new_tab: false
 ---
