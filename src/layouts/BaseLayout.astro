@@ -1,5 +1,6 @@
 ---
 import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
 import '../styles/style.scss';
 import { Font } from 'astro:assets'; 
 const { frontmatter } = Astro.props;
@@ -21,6 +22,9 @@ const seoMeta = frontmatter.seo_description === 'no-index'
 </head>
 <body>
     <Header />
-    <slot />
+    <main>
+        <slot />
+    </main>
+    <Footer />
 </body>
 </html>
