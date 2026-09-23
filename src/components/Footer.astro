@@ -1,0 +1,23 @@
+---
+import { menu } from '../data/footer-menu.json';
+---
+ <footer>
+    <div>
+        <nav>
+            <ul>
+            {menu.items.map((item) => (
+                <li>
+                    <a
+                        href={item.url}
+                        target={item.new_tab ? '_blank' : undefined}
+                        rel={item.new_tab ? 'noopener noreferrer' : undefined}
+                    >
+                        {item.link_text}
+                    </a>
+                </li>
+            ))}
+            </ul>
+        </nav>
+        <p>&copy; 2026 Steadyfooted. All rights reserved.</p>
+    </div>
+</footer>
