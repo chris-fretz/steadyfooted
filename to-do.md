@@ -11,7 +11,8 @@
 ~~- Connect repot to Netlify~~
 ~~- Give Pages CMS access to repo~~
 ~~- Configure Pages CMS~~
-- Set up SASS (normalize, functions, global classes, etc.)
+~~- Set up SASS (normalize, functions, global classes, etc.)~~
+~~- Set up light theme/dark theme toggle~~
 - Build header
 - Build footer
 - Build main page layout

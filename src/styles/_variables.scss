@@ -1,6 +1,7 @@
 /*--------------------
     Table of Contents
         # Colors
+        # Icons
         # Fonts
         # Misc
 --------------------*/
@@ -8,12 +9,35 @@
 /*-----------
     # Colors
 -----------*/
+html {
+    --bg-color: #fdfbf8;
+    --secondary-bg: #dee4ee;
+    --text-color: #060913;
+    
+    background-color: var(--bg-color);
+    color: var(--text-color);
+}
+html.dark {
+    --bg-color: #060913;
+    --secondary-bg: #252728;
+    --text-color: #fff;
 
+    background-color: var(--bg-color);
+    color: var(--text-color);
+}
 $white: #fff;
 $black: #000;
 $green: #009958;
 $dark-green: #17734c;
 
+/*-----------
+    # Icons
+-----------*/
+.sun { fill: black; }
+.moon { fill: transparent; }
+
+.dark .sun { fill: transparent; }
+.dark .moon { fill: white; }
 /*-----------
     # Fonts
 -----------*/

@@ -17,9 +17,6 @@ button {
         &::before {
             display: block;
         }
-        &.fa-sun {
-            color: #ffff00;
-        }
         &.fa-bars {
             font-size: to-rem(24);
             color: var(--text-primary);
