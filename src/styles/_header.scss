@@ -14,12 +14,11 @@ header {
             z-index: 20;
             background: var(--bg-color);
             padding: 20px;
-            border: 2px solid var(--text-primary);
+            border: 2px solid var(--text-color);
             border-radius: 20px;
             top: 40px;
             right: 43px;
             max-height: 0;
-            // overflow: hidden;
             visibility: hidden;
             &.open {
                 max-height: 2000px;

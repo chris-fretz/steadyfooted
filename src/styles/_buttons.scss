@@ -9,19 +9,8 @@ button {
 }
 
 .icon-btn {
-    span {
-        display: flex;
-        justify-content: center;
-        font-size: to-rem(24);
-        line-height: to-rem(30);
-        &::before {
-            display: block;
-        }
-        &.fa-bars {
-            font-size: to-rem(24);
-            color: var(--text-primary);
-        }
-    }
+    // For this to work, the SVG inside .icon-button must have a stroke or fill set to "currentColor"
+    color: var(--text-color);
 }
 
 #menu-toggle {
