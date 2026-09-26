@@ -2,8 +2,9 @@
 
 header {
     .wrap {
-        @media (min-width: 365px) {
+        @media (min-width: 402px) {
             justify-content: space-between;
+            flex-direction: row;
         }
     }
     .header-right {
@@ -20,10 +21,13 @@ header {
             right: 43px;
             max-height: 0;
             visibility: hidden;
+            ul {
+                flex-direction: column;
+            }
             &.open {
                 max-height: 2000px;
                 visibility: visible;
-                transition: max-height 0.75s ease-in-out, visibility 0.75s ease-in-out;
+                transition: max-height 0.45s ease-in-out, visibility 0.45s ease-in-out;
             }
             @media (min-width: 768px) {
                 visibility: visible;

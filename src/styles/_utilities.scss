@@ -33,6 +33,9 @@
 .flex-wrap {
 	flex-wrap: wrap;
 }
+.flex-col {
+	flex-direction: column;
+}
 .align-center {
 	align-items: center;
 }
@@ -48,10 +51,8 @@
 .gap-25 {
 	gap: to-rem(25);
 }
-.centered {
-	margin-left: auto;
-	margin-right: auto;
-	text-align: center;
+.gap-40 {
+	gap: to-rem(40);
 }
 .circular {
 	border-radius: 50%;
@@ -60,9 +61,13 @@
 	border-radius: to-rem;
 	overflow: hidden;
 }
-.icon-container {
-	display: flex;
-	gap: to-rem(25);
+.centered {
+	margin-left: auto;
+	margin-right: auto;
+	text-align: center;
+}
+.text-center {
+	text-align: center;
 }
 .two-column {
 	@media (min-width: 1024px) {
@@ -111,7 +116,7 @@
 }
 .logo-link {
 	font-family: var(--font-pacifico);
-	font-size: to-rem(48);
+	font-size: to-rem(40);
 	line-height: 1.5;
 	text-decoration: none;
 }
