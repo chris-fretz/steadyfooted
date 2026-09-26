@@ -13,8 +13,8 @@
 ~~- Configure Pages CMS~~
 ~~- Set up SASS (normalize, functions, global classes, etc.)~~
 ~~- Set up light theme/dark theme toggle~~
-- Build header
-- Build footer
+~~- Build header~~
+~~- Build footer~~
 - Build main page layout
 - Build blocks
     - Hero
