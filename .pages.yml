@@ -1,6 +1,6 @@
 media: 
-  input: src/images
-  output: images
+  input: src/assets/images
+  output: src/assets/images
   exclude: .gitkeep
 
 components:

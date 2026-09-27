@@ -1,0 +1,44 @@
+---
+import { renderMarkdown } from '../../utils/helpers.js';
+
+interface Card {
+    image: string;
+    alt_text: string;
+    heading: string;
+    content: string;
+    url: string;
+    link_text: string;
+    new_tab?: boolean;
+}
+
+interface Props {
+    block: {
+        intro?: string;
+        cards: Card[];
+    };
+}
+
+const { block } = Astro.props as Props;
+const intro = block.intro ? renderMarkdown(block.intro) : null;
+---
+
+<section class="block cards">
+    <div class="wrap">
+        {intro && <div class="intro" set:html={intro} />}
+        {block.cards.map((card) => {
+            const cardContent = card.content ? renderMarkdown(card.content) : null;
+            return (
+                <article class="rounded">
+                    <img src={card.image} alt={card.alt_text} width="420" />
+                    <div class="flex">
+                        <h3>{card.heading}</h3>
+                        {cardContent && <div set:html={cardContent} />}
+                        <div class="flex">
+                            <a href={card.url} target={card.new_tab ? '_blank' : undefined} rel={card.new_tab ? 'noopener noreferrer' : undefined}>{card.link_text}</a>
+                        </div>
+                    </div>
+                </article>
+            );
+        })}
+    </div>
+</section>

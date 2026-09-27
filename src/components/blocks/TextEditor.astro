@@ -1,0 +1,9 @@
+---
+import { renderMarkdown } from '../../utils/helpers.js';
+const { block } = Astro.props;
+const contentHtml = renderMarkdown(block.content);
+---
+
+<section class="block text-editor">
+    <div class="wrap max-w-800" set:html={contentHtml} />
+</section>

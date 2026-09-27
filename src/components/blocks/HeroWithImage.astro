@@ -1,0 +1,23 @@
+---
+import { renderMarkdown } from '../../utils/helpers.js';
+const { block } = Astro.props;
+import { Image } from 'astro:assets';
+const subheading = block.subheading ? renderMarkdown(block.subheading) : null;
+---
+
+<section class="hero overlay">
+    <Image 
+        class="img-overlay" 
+        src={block.hero_image}
+        alt={block.alt_text}
+        widths={[320, 768, 1024, 1280, 1920]}
+        height="500" 
+        sizes="(min-width: 1920px) 1920px, 100vw" 
+        loading="eager"
+        fetchpriority="high"
+    />
+    <div class="content centered">
+        <h1>{block.heading}</h1>
+        {subheading && <div class="mx-800" set:html={subheading} />}
+    </div>
+</section>
