@@ -1,4 +1,68 @@
 ---
+import { renderMarkdown } from '../../utils/helpers.js';
+
+interface Item {
+    question: string;
+    answer?: string;
+}
+
+interface Group {
+    intro?: string;
+    items: Item[];
+}
+
+interface Props {
+    block: {
+        schema?: boolean;
+        accordion_groups: Group[];
+    };
+}
+
+const { block } = Astro.props;
+
+const schemaMainEntity = block.schema
+    ? {
+        itemscope: true,
+        itemprop: 'mainEntity',
+        itemtype: 'https://schema.org/Question',
+    }
+    : {};
+
+const schemaAnswer = block.schema
+    ? {
+        itemscope: true,
+        itemprop: 'acceptedAnswer',
+        itemtype: 'https://schema.org/Answer',
+    }
+    : {};
 ---
 
-<!-- Let's do stuff! -->
+<section class="block accordion-section">
+    <div class="wrap">
+        {/* Loop through each accordion group */}
+        {block.accordion_groups.map((group, groupIndex) => {
+            const intro = group.intro ? renderMarkdown(group.intro) : null;
+            return (
+                <section>
+                    {intro && <div set:html={intro} />}
+                    {/* Loop through each individual accordion */}
+                    {group.items.map((item, index) => {
+                        const answer = item.answer ? renderMarkdown(item.answer) : null;
+                        const answerId = `answer-${groupIndex}-${index}`;
+                        return (
+                            <div {...schemaMainEntity}>
+                                <button aria-expanded="false" aria-controls={answerId}>
+                                    <h4 itemprop={block.schema ? 'name' : undefined}>{item.question}</h4>
+                                    <span class="icon" aria-hidden="true"></span>
+                                </button>
+                                <div id={answerId} {...schemaAnswer}>
+                                    <div itemprop={block.schema ? 'text' : undefined} set:html={answer} />
+                                </div>
+                            </div>
+                        );
+                    })}
+                </section>
+            );
+        })}
+    </div>
+</section>

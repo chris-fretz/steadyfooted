@@ -1,0 +1,37 @@
+---
+import { renderMarkdown } from '../../utils/helpers.js';
+interface Item {
+    copy: string;
+    circular: string;
+    image: string;
+    alt_text: string;
+}
+
+interface Props {
+    block: {
+        orientation: string;
+        sections: Item[];
+    }
+}
+
+const { block } = Astro.props as Props;
+---
+
+<div class={`alt-content-wrap ${block.orientation}`}>
+{block.sections.map((item) => {
+    return (
+        <section class="block">
+            <div class="wrap flex">
+                {item.copy && <div set:html={item.copy} />}
+                <div>
+                    <img class={item.circular ? "circular" : undefined}
+                        src={item.image} 
+                        alt={item.alt_text}
+                        width="520" 
+                    />
+                </div>
+            </div>
+        </section>
+    )
+})}
+</div>
