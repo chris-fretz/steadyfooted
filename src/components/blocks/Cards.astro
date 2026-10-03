@@ -18,7 +18,7 @@ interface Props {
     };
 }
 
-const { block } = Astro.props as Props;
+const { block } = Astro.props;
 const intro = block.intro ? renderMarkdown(block.intro) : null;
 ---
 

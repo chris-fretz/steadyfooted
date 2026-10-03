@@ -3,9 +3,46 @@ import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import { Font } from 'astro:assets'; 
 import '../styles/style.scss';
+
+// Define types for frontmatter properties
+interface Props {
+    frontmatter: {
+        title: string;
+        hero: Array<Record<string, any>>;
+        blocks?: Array<Record<string, any>>;
+        page_setup?: {
+            seo_description?: string;
+        };
+    };
+}
+
 const { frontmatter } = Astro.props;
+
+/* Convert Astro's PascalCase component filenames to kebab-case, matching the CMS block "type" strings,
+so the blockComponents() function can map the right component to each block in the CMS page content. */
+function toKebabCase(str: string) {
+    return str.replace(/([a-z])([A-Z])/g, '$1-$2').toLowerCase();
+}
+
+const blockModules = import.meta.glob('../components/blocks/*.astro', { eager: true });
+
+const blockComponents = Object.fromEntries(
+    Object.entries(blockModules).map(([path, mod]) => {
+        const fileName = path.split('/').pop()!.replace('.astro', '');
+        const key = toKebabCase(fileName);
+        return [key, (mod as any).default];
+    })
+);
+
+const HeroComponent = blockComponents[frontmatter.hero[0].type];
+
+// Define page metadata variables
 const pageTitle = frontmatter.title !== 'Steadyfooted' ? `${frontmatter.title} | Steadyfooted` : frontmatter.title;
-const seoMeta = frontmatter.seo_description === 'no-index' ? { name: 'robots', content: 'noindex' } : { name: 'description', content: frontmatter.seo_description };
+const seoMeta = frontmatter.page_setup?.seo_description === 'no-index'
+    ? { name: 'robots', content: 'noindex' }
+    : { name: 'description', content: frontmatter.page_setup?.seo_description };
+
+console.log(Object.keys(blockComponents));
 ---
 
 <!DOCTYPE html>
@@ -55,6 +92,16 @@ const seoMeta = frontmatter.seo_description === 'no-index' ? { name: 'robots', c
     <Header />
     <main>
         <slot />
+        <p>try this out</p>
+        {HeroComponent && <HeroComponent block={frontmatter.hero[0]} />}
+
+        {frontmatter.blocks?.map((block) => {
+            const BlockComponent = blockComponents[block.type];
+            if (!BlockComponent) {
+                throw new Error(`No matching component for block type: "${block.type}"`);
+            }
+            return <BlockComponent block={block} />;
+        })}
     </main>
     <Footer />
     <script>
