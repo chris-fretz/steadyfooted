@@ -182,6 +182,13 @@ components:
       - name: subheading
         label: Subheading
         type: rich-text
+        options:
+          format: markdown
+      - name: subheading-two
+        label: Subheading Two
+        type: rich-text
+        options:
+          format: html        
 
   menu:
     label: Menu
