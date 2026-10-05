@@ -10,7 +10,9 @@ hero:
     hero_image: src/assets/images/hero-fiery-sunset.webp
     alt_text: Hero placeholder image
     heading: Steadyfooted
-    subheading: Taking it one step at a time
+    subheading: Taking it one step at a [time](https://google.com)
+    subheading-two: <p>Taking it one step at a <a href="https://google.com"
+      target="_blank">time</a></p>
 blocks:
   - type: alt-content
     orientation: copy-left
