@@ -13,6 +13,8 @@ components:
         label: Accordion Intro
         description: This is an optional intro section to introduce the entire accordion section. Use H2 for headings.
         type: rich-text
+        options:
+          format: html  
       - name: schema
         label: Do you need FAQ schema?
         description: Turn this on if this accordion section will be used for frequently asked questions. It will add FAQ schema that will make search engines more likely to display your question and answer in question-based searches.
@@ -27,6 +29,8 @@ components:
           label: Group Intro
           description: This is an optional intro section to introduce the this accordion group. Use H3 for headings.
           type: rich-text
+          options:
+            format: html  
         - name: items
           label: Individual Accordions
           description: Add a heading/question and content/answer for each accordion.
@@ -39,6 +43,8 @@ components:
             - name: answer
               Label: content
               type: rich-text
+              options:
+                format: html  
 
   alt-content:
     label: Alternating Content
@@ -62,6 +68,8 @@ components:
           label: Copy
           description: Use an H2 for headings.
           type: rich-text
+          options:
+            format: html  
           required: true
         - name: circular
           label: Make The Image Circular?
@@ -104,6 +112,8 @@ components:
         description: Add the H2 heading here. Additional intro info can be added if needed.
         required: true
         type: rich-text
+        options:
+          format: html  
       - name: cards
         label: Cards
         type: object
@@ -125,6 +135,8 @@ components:
         - name: content
           label: Card Content
           type: rich-text
+          options:
+            format: html  
         - name: url
           label: CTA button link
           type: string
@@ -150,6 +162,8 @@ components:
       - name: intro
         label: Form Intro (optional)
         type: rich-text
+        options:
+          format: html  
         description: Add an optional introduction giving any info you'd like about the communication process.
 
   hero-simple:
@@ -162,7 +176,8 @@ components:
         - name: subheading
           label: Subheading
           type: rich-text
-          format: html
+          options:
+            format: html
 
   hero-with-image:
     label: Hero with Image
@@ -183,12 +198,7 @@ components:
         label: Subheading
         type: rich-text
         options:
-          format: markdown
-      - name: subheading-two
-        label: Subheading Two
-        type: rich-text
-        options:
-          format: html        
+          format: html
 
   menu:
     label: Menu
@@ -232,6 +242,8 @@ components:
       - name: content
         label: Content
         type: rich-text
+        options:
+          format: html  
 
 content:
   - name: posts

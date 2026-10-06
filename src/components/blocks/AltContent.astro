@@ -18,20 +18,21 @@ const { block } = Astro.props;
 ---
 
 <div class={`alt-content-wrap ${block.orientation}`}>
-{block.sections.map((item) => {
-    return (
-        <section class="block">
-            <div class="wrap flex">
-                {item.copy && <div set:html={item.copy} />}
-                <div>
-                    <img class={item.circular ? "circular" : undefined}
-                        src={item.image} 
-                        alt={item.alt_text}
-                        width="520" 
-                    />
+    {block.sections.map((item) => {
+        const copy = item.copy ? renderMarkdown(item.copy) : null;
+        return (
+            <section class="block">
+                <div class="wrap flex">
+                    {copy && <div set:html={copy} />}
+                    <div>
+                        <img class={item.circular ? "circular" : undefined}
+                            src={item.image} 
+                            alt={item.alt_text}
+                            width="520" 
+                        />
+                    </div>
                 </div>
-            </div>
-        </section>
-    )
-})}
+            </section>
+        )
+    })}
 </div>
