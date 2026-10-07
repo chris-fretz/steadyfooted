@@ -1,21 +1,38 @@
 ---
 import { renderMarkdown } from '../../utils/helpers.js';
+
+interface Props {
+    block: {
+        hero_image: string;
+        alt_text?: string;
+        heading?: string;
+        subheading?: string;
+    };
+}
+
 const { block } = Astro.props;
-import { Image } from 'astro:assets';
+const { Image } = await import('astro:assets');
+const images = import.meta.glob<{ default: ImageMetadata }>(
+    '/src/assets/images/*.{jpeg,jpg,png,webp,avif}'
+);
+const imagePath = `/${block.hero_image}`;
+const heroImage = images[imagePath] ? (await images[imagePath]()).default : null;
 const subheading = block.subheading ? renderMarkdown(block.subheading) : null;
 ---
 
 <section class="hero overlay">
-    <Image 
-        class="img-overlay" 
-        src={block.hero_image}
-        alt={block.alt_text}
-        widths={[320, 768, 1024, 1280, 1920]}
-        height="500" 
-        sizes="(min-width: 1920px) 1920px, 100vw" 
-        loading="eager"
-        fetchpriority="high"
-    />
+    {heroImage && (
+        <Image 
+            class="img-overlay" 
+            src={heroImage}
+            alt=""
+            widths={[320, 768, 1024, 1280, 1920]}
+            height="500" 
+            sizes="(min-width: 1920px) 1920px, 100vw" 
+            loading="eager"
+            fetchpriority="high"
+        />
+    )}
     <div class="content centered">
         <h1>{block.heading}</h1>
         {subheading && <div class="mx-800" set:html={subheading} />}
