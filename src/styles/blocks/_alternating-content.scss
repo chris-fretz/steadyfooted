@@ -1,0 +1,49 @@
+.alt-content-wrap {
+    .alt-content {
+        .wrap {
+            flex-direction: column-reverse;
+            justify-content: center;
+            align-items: center;
+            gap: 30px;
+            @media (min-width: 1024px) {
+                flex-direction: row;
+                gap: 60px;
+            }
+        }
+        .content {
+            max-width: 750px;
+            text-align: center;
+            flex: 1; // This allows the content to take up available space, even if it's smaller than the image
+            min-width: 0; // allows the text box to shrink below its content's natural width
+            @media (min-width: 1024px) {
+                text-align: left;
+            }
+        }
+        img {
+            flex-shrink: 0;
+        }
+        &:nth-of-type(even) {
+            .wrap {
+                @media (min-width: 1024px) {
+                    flex-direction: row-reverse;
+                }
+            }
+        }
+    }
+    &.copy_right {
+        .alt-content {
+            .wrap {
+                @media (min-width: 1024px) {
+                    flex-direction: row-reverse;
+                }
+            }
+        }
+        &:nth-of-type(even) {
+            .wrap {
+                @media (min-width: 1024px) {
+                    flex-direction: row;
+                }
+            }
+        }
+    }
+}

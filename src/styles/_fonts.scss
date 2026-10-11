@@ -10,7 +10,10 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 h1 {
-	font-size:to-rem(45);
+	font-size:to-rem(39);
+	@media (min-width: 414px) {
+		font-size:to-rem(45);
+	}
 }
 h2 {
 	font-size:to-rem(32);

@@ -6,8 +6,8 @@ const intro = block.intro ? renderMarkdown(block.intro) : null;
 
 <section class="block contact-form">
     <div class="wrap">
-        {intro && <div class="wrap pb-50" set:html={intro} />}
-        <form action="" method="POST" class="flex">
+        {intro && <div class="intro wrap pb-50" set:html={intro} />}
+        <form action="" method="POST" class="flex flex-wrap form">
             <div class="form-row">
                 <div class="form-item">
                     <label for="first-name">First Name</label>

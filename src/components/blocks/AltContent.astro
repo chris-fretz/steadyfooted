@@ -21,9 +21,9 @@ const { block } = Astro.props;
     {block.sections.map((item) => {
         const copy = item.copy ? renderMarkdown(item.copy) : null;
         return (
-            <section class="block">
+            <section class="block alt-content">
                 <div class="wrap flex">
-                    {copy && <div set:html={copy} />}
+                    {copy && <div class="content" set:html={copy} />}
                     <div>
                         <img class={item.circular ? "circular" : undefined}
                             src={item.image} 
