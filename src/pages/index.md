@@ -15,20 +15,22 @@ blocks:
   - type: alt-content
     orientation: copy-left
     sections:
-      - copy: <p>## Developer, Theologian, and Other Identities Welcome to Steadyfooted!
-          I'm Chris Fretz, a husband, father, web developer, theologian, and
-          person of faith. I made this website to show some of the websites and
-          web dev projects I've worked on, as well as hosting a blog where I
-          write about tech, current events, politics, spirituality, and anything
-          else that catches my fancy. [About page](/about/)</p>
+      - copy: <h2>Developer, Theologian, and Other Identities</h2><p>Hi, I'm Chris
+          Fretz, a husband, father, web developer, fan of hardcore punk, and
+          theologian and follower of Jesus. I made this website to show some of
+          the websites and web dev projects I've worked on, as being the home
+          for my blog where I write about tech, current events, politics,
+          spirituality, and anything else that catches my fancy.</p><p>Learn
+          more about me on the <a href="/about/">About page</a>.</p>
         circular: true
         image: src/assets/images/chris-fretz-2023.jpg
         alt_text: Chris Fretz, web developer
   - type: cards
-    intro: <p>## My Work I've been a professional web developer since 2021, mostly
-      specializing in WordPress sites for digital marketing agencies. I started
-      as a front-end dev, but have been learning a lot about databases, APIs,
-      headless content management systems (CMS) and other back-end tools.</p>
+    intro: <h2>My Work</h2><p>I've been a professional web developer since 2021,
+      mostly specializing in WordPress sites for digital marketing agencies. I
+      started as a front-end dev, but have been learning a lot about databases,
+      APIs, headless content management systems (CMS) and other back-end
+      tools.</p>
     cards:
       - image: src/assets/images/1920x500.webp
         heading: Projects I've built
