@@ -40,9 +40,9 @@ blocks:
         link_text: Browse Portfolio
         new_tab: false
       - image: src/assets/images/1920x500.webp
-        heading: PENS Stack
-        content: <p>I built this site with Pages CMS, Eleventy, Netlify, and SASS. It's
-          a simple, yet powerful tech stack for building content-driven static
+        heading: PANS Stack
+        content: <p>I built this site with Pages CMS, Astro, Netlify, and SASS. It's a
+          simple, yet powerful tech stack for building content-driven static
           websites.</p>
         url: /pens-stack/
         link_text: Explore the PENS Stack
