@@ -15,7 +15,7 @@
 ~~- Set up light theme/dark theme toggle~~
 ~~- Build header~~
 ~~- Build footer~~
-- Build main page layout
+~~- Build main page layout~~
 - Build blocks
     - Hero
     - Simple Text Editor
@@ -29,3 +29,5 @@
     - Categories
     - Main Blog Page
     - RSS Feed
+- Build custom 404 page
+- Create Favicon
