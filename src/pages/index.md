@@ -32,25 +32,25 @@ blocks:
       APIs, headless content management systems (CMS) and other back-end
       tools.</p>
     cards:
-      - image: src/assets/images/1920x500.webp
+      - image: src/assets/images/420x261.webp
         heading: Projects I've built
         content: <p>I've built numerous web dev projects over the years. Check them out
           here.</p>
         url: /portfolio/
         link_text: Browse Portfolio
         new_tab: false
-      - image: src/assets/images/1920x500.webp
+      - image: src/assets/images/420x261.webp
         heading: PANS Stack
         content: <p>I built this site with Pages CMS, Astro, Netlify, and SASS. It's a
           simple, yet powerful tech stack for building content-driven static
           websites.</p>
-        url: /pens-stack/
-        link_text: Explore the PENS Stack
+        url: /pans-stack/
+        link_text: Explore the PANS Stack
         new_tab: false
-      - image: src/assets/images/1920x500.webp
+      - image: src/assets/images/420x261.webp
         heading: Blog
         content: <p>I love reading, learning, and processing what I'm learning with
-          others. This blog is a space for me to explore web development, Linux
+          others. In this blog I explore web development, Linux
           and other open source projects, current events, politics,
           spirituality, and other subjects</p>
         url: /blog/

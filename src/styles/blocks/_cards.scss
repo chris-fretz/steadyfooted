@@ -1,0 +1,11 @@
+.cards {
+    .wrap-content {
+        flex-direction: column;
+        padding: 20px 18px;
+        height: calc(100% - 261px);
+        background-color: var(--secondary-bg);
+        * {
+            color: var(--text-primary);
+        }
+    }
+}
