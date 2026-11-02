@@ -25,17 +25,17 @@ const intro = block.intro ? renderMarkdown(block.intro) : null;
 <section class="block cards">
     <div class="wrap">
         {intro && <div class="intro" set:html={intro} />}
-        <div class="gap-60 flex flex-wrap justify-center">
+        <div class="flex gap-60 flex-wrap justify-center">
             {block.cards.map((card) => {
                 const cardContent = card.content ? renderMarkdown(card.content) : null;
                 return (
-                    <article class="max-w-420 rounded">
-                        <img src={card.image} alt={card.alt_text} width="420" />
-                        <div class="flex wrap-content">
+                    <article class="rounded max-w-420">
+                        <img class="card-image" src={card.image} alt={card.alt_text} width="420" height="260"/>
+                        <div class="card-content flex flex-col bg-secondary p-20">
                             <h3>{card.heading}</h3>
                             {cardContent && <div set:html={cardContent} />}
-                            <div class="flex justify-center mt-auto">
-                                <a href={card.url} target={card.new_tab ? '_blank' : undefined} rel={card.new_tab ? 'noopener noreferrer' : undefined}>{card.link_text}</a>
+                            <div class="btn-wrap flex justify-center">
+                                <a class="btn" href={card.url} target={card.new_tab ? '_blank' : undefined} rel={card.new_tab ? 'noopener noreferrer' : undefined}>{card.link_text}</a>
                             </div>
                         </div>
                     </article>

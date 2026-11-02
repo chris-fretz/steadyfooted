@@ -18,8 +18,8 @@ blocks:
       - copy: <h2>Developer, Theologian, and Other Identities</h2><p>Hi, I'm Chris
           Fretz, a husband, father, web developer, fan of hardcore punk, and
           theologian and follower of Jesus. I made this website to show some of
-          the websites and web dev projects I've worked on, as being the home
-          for my blog where I write about tech, current events, politics,
+          the websites and web dev projects I've worked on. It's also home
+          to my blog where I write about tech, current events, politics,
           spirituality, and anything else that catches my fancy.</p><p>Learn
           more about me on the <a href="/about/">About page</a>.</p>
         circular: true
@@ -57,7 +57,7 @@ blocks:
         link_text: Read the Blog
         new_tab: false
   - type: contact-form
-    heading: Get in Touch!
+    heading: Get in Touch (TODO - Rework content below)!
     intro: <p>Feel free to reach out if you'd like me to build a website or web app
       for you, if you'd like to invite me as a speaker on tech, religion, and/or
       current events, or if you'd like to collaborate in some other way.</p>

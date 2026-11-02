@@ -10,8 +10,8 @@
         display: flex;
         flex-direction: column;
         justify-content: center;
-        row-gap: 20px;
-        column-gap: 30px;
+        row-gap: to-rem(20);
+        column-gap: to-rem(30);
         width: 100%;
         max-width: 900px;
         @media (min-width: 768px) {
@@ -25,9 +25,11 @@
         width: 100%;
         input {
             height: 48px;
+            padding: 0 to-rem(15);
         }
         textarea {
             height: 96px;
+            padding: 0 to-rem(15);
         }
     }
 }

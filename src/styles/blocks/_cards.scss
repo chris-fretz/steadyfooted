@@ -1,11 +1,14 @@
 .cards {
-    .wrap-content {
-        flex-direction: column;
-        padding: 20px 18px;
+    .card-image {
+        // Check what you did on Rhoads industry cards and replicate here.
+        aspect-ratio: 420 / 261;
+        width: 100%;
+        object-fit: cover;
+    }
+    .card-content {
         height: calc(100% - 261px);
-        background-color: var(--secondary-bg);
-        * {
-            color: var(--text-primary);
-        }
+    }
+    .btn-wrap {
+        margin-top: auto;
     }
 }

@@ -18,3 +18,19 @@ button {
         display: none;
     }
 }
+
+.btn {
+    display: inline-block;
+    color: #fff !important;
+    background-color: $green;
+    padding: to-rem(15);
+    border-radius: to-rem(3);
+    text-decoration: none;
+    margin-top: to-rem(10);
+    font-size: to-rem(18);
+    transition: .25s ease-in-out;
+
+    &:hover {
+        background-color: $dark-green;
+    }
+}

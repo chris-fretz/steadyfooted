@@ -1,12 +1,15 @@
 ---
 import { renderMarkdown } from '../../utils/helpers.js';
 const { block } = Astro.props;
+const heading = block.heading ? block.heading : 'Contact Us';
 const intro = block.intro ? renderMarkdown(block.intro) : null;
 ---
 
 <section class="block contact-form">
     <div class="wrap">
-        {intro && <div class="intro wrap pb-50" set:html={intro} />}
+
+        <h2 class="text-center">{heading}</h2>
+        {intro && <div class="intro wrap" set:html={intro} />}
         <form action="" method="POST" class="flex flex-wrap form">
             <div class="form-row">
                 <div class="form-item">
